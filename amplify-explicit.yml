@@ -3,18 +3,13 @@ frontend:
   phases:
     preBuild:
       commands:
+        - nvm install 14
+        - nvm use 14
         - npm install --quiet --global expo-cli
-        - >
-          if [ -f yarn.lock ]; then
-            yarn
-          elif [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then
-            npm ci
-          else
-            npm install
-          fi
+        - npm install
     build:
       commands:
-        - expo build:web
+        - npx expo export -p web --output-dir web-build
   artifacts:
     baseDirectory: web-build
     files:
