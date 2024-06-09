@@ -3,7 +3,9 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm install
+        - nvm install 14   # Install Node.js version 14
+        - nvm use 14       # Use Node.js version 14
+        - npm install      # Install project dependencies
     build:
       commands:
         - npx expo export -p web --output-dir web-build
