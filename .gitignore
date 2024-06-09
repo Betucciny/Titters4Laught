@@ -33,3 +33,11 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+# amplify
+.amplify
+amplify_outputs*
+amplifyconfiguration*
+
+apk
+**.apk
