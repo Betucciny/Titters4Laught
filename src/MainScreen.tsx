@@ -57,7 +57,7 @@ function MainScreen() {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Image
-        source={require("../assets/icon.png")}
+        source={{uri: "https://storage.googleapis.com/artifym/image_2024-06-09_071912442.png"}}
         style={styles.logo}
         placeholder={{ blurhash }}
         contentFit="cover"

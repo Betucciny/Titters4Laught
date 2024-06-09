@@ -7,7 +7,7 @@ function CustomSplash() {
   return (
     <View style={styles.container}>
       <Image
-        source={require('../assets/logo.png')}
+        source={{uri: "https://storage.googleapis.com/artifym/image_2024-06-09_071912442.png"}}
         style={styles.logo}
       />
       <ActivityIndicator size="large" color="#0000ff" style={styles.loader} />
