@@ -40,18 +40,20 @@ function MainScreen() {
   const [gender, setGender] = useState<string>(genders[0]);
   const [age, setAge] = useState<string>(ages[0]);
   const [tweet, setTweet] = useState<string>("Here will be a funny tweet!");
+  const [userId, setUserId] = useState<string>("");
 
   useEffect(() => {
     const getUser = async () => {
       const user = await getCurrentUser();
-      console.log(user.userId);
+      if (user) {
+        setUserId(user.username);
+      }
     };
     getUser();
   }, []);
 
   const generateTweet = () => {
-    const tweet = generate(nationality, gender, age);
-    setTweet(tweet);
+    generate(nationality, gender, age, userId, setTweet);
   };
 
   return (

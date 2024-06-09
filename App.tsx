@@ -9,7 +9,14 @@ import MainScreen from "./src/MainScreen";
 Amplify.configure(outputs);
 
 function LogoImage() {
-  return <Image source={require("./assets/logo.png")} style={styles.logo} />;
+  return (
+    <Image
+      source={{
+        uri: "https://storage.googleapis.com/artifym/image_2024-06-09_071912442.png",
+      }}
+      style={styles.logo}
+    />
+  );
 }
 
 const App = () => {
