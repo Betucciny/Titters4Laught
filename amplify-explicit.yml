@@ -3,9 +3,17 @@ frontend:
   phases:
     preBuild:
       commands:
-        - nvm install 14   # Install Node.js version 14
-        - nvm use 14       # Use Node.js version 14
-        - npm install      # Install project dependencies
+        - nvm install 14                          # Install Node.js version 14
+        - nvm use 14                              # Use Node.js version 14
+        - npm install --quiet --global expo-cli   # Install Expo CLI globally
+        - >
+          if [ -f yarn.lock ]; then
+            yarn
+          elif [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then
+            npm ci
+          else
+            npm install
+          fi
     build:
       commands:
         - npx expo export -p web --output-dir web-build
